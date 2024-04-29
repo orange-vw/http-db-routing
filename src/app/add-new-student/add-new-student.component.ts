@@ -25,6 +25,6 @@ export class AddNewStudentComponent {
       name: this.sName,
       age: this.sAge,
     };
-    this.stdService.addStudent(newStudent);
+    this.stdService.addStudent(newStudent).subscribe();
   }
 }

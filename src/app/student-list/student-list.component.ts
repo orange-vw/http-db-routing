@@ -15,7 +15,13 @@ export class StudentListComponent {
   constructor(private stdService: StudentService) {}
 
   ngOnInit() {
-    this.studentList = this.stdService.STUDENTS;
+    this.fetchData();
+  }
+
+  private fetchData(){
+    this.stdService.getStudents().subscribe(
+      data => this.studentList = data
+    );
   }
 
   onClearData() {
